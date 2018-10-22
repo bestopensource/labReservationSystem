@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="admin/account/Create.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="admin/activities/Edit.xhtml" x="650" y="750" zoom="true"/>
+        <Node id="admin/lab/View.xhtml" x="650" y="600" zoom="true"/>
+        <Node id="welcomePrimefaces.xhtml" x="1400" y="300" zoom="true"/>
+        <Node id="admin/activities/List" x="1400" y="450" zoom="true"/>
+        <Node id="admin/lab/List.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="admin/lab/Create.xhtml" x="900" y="600" zoom="true"/>
+        <Node id="admin/labReservation/Edit.xhtml" x="1150" y="450" zoom="true"/>
+        <Node id="admin/activities/Create.xhtml" x="1150" y="300" zoom="true"/>
+        <Node id="admin/account/List.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="login/Login" x="1650" y="300" zoom="true"/>
+        <Node id="admin/account/View.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="template.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="admin/account/Edit.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="admin/computerReservation/List.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="admin/labReservation/List.xhtml" x="150" y="900" zoom="true"/>
+        <Node id="admin/computer/View.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="index.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="admin/computer/Create.xhtml" x="1650" y="150" zoom="true"/>
+        <Node id="admin/computer/List.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="admin/labReservation/View.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="admin/computerReservation/View.xhtml" x="150" y="1050" zoom="true"/>
+        <Node id="admin/computerReservation/Edit.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="admin/labReservation/Create.xhtml" x="400" y="900" zoom="true"/>
+        <Node id="index_2.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="admin/activities/List.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="login/Login.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="admin/lab/Edit.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="admin/computer/Edit.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="admin/activities/View.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="admin/computerReservation/Create.xhtml" x="1900" y="150" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

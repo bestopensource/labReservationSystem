@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>login</title>
+    </h:head>
+    <h:body>
+        <p:panel header="#{bundle.CreateAccountTitle}">
+            <p:messages autoUpdate="true"/>
+            <h:form id="AccountCreateForm">
+                <p:inputText id="id" value="#{accountController.selected.id}" title="#{bundle.CreateAccountTitle_id}" type="hidden"/>
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{accountController.selected != null}" >
+                        <p:outputLabel value="#{bundle.CreateAccountLabel_username}" for="username" />
+                        <p:inputText required="true" id="username" value="#{accountController.selected.username}" title="#{bundle.CreateAccountTitle_username}" />
+                        <p:outputLabel value="#{bundle.CreateAccountLabel_email}" for="email" />
+                        <p:inputText required="true" id="email" value="#{accountController.selected.email}" title="#{bundle.CreateAccountTitle_email}" />
+                        <p:outputLabel value="#{bundle.CreateAccountLabel_password}" for="password" />
+                        <p:password required="true" id="password" value="#{accountController.selected.password}" title="#{bundle.CreateAccountTitle_password}" label="#{bundle.CreateAccountLabel_password}" match="passwordConfirm"/>
+                        <p:outputLabel value="#{bundle.CreateAccountLabel_passwordConfirm}" for="passwordConfirm" />
+                        <p:password id="passwordConfirm" title="#{bundle.CreateAccountTitle_passwordConfirm}" label="#{bundle.CreateAccountLabel_passwordConfirm}"/>
+                        <p:outputLabel value="#{bundle.CreateAccountLabel_roleSystem}" for="roleSystem" />
+                        <p:selectOneMenu required="true" id="roleSystem" value="#{accountController.selected.roleSystem}" >
+                            <f:selectItems value="#{roleSystemController.itemsWithoutAdmin}"
+                                           var="roleItem"
+                                           itemValue="#{roleItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton action="#{accountController.create}" value="#{bundle.Create}"/>
+                    <p:commandButton process="@this" actionListener="#{accountController.prepareCreate}" value="#{bundle.Login}" action="/login/Login.xhtml"/>
+                </h:panelGroup>
+            </h:form>
+        </p:panel>
+    </h:body>    
+</html>
+
+

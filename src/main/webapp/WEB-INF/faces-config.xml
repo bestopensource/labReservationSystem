@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <application>
+        <locale-config>
+            <default-locale>pl</default-locale>
+            <supported-locale>pl</supported-locale>
+            <supported-locale>en</supported-locale>
+        </locale-config>
+        <resource-bundle>
+            <base-name>/Bundle</base-name>
+            <var>bundle</var>
+        </resource-bundle>
+    </application>
+    <navigation-rule>
+            <from-view-id>/login/Login.xhtml</from-view-id>
+            <navigation-case>
+                    <from-action>#{loginController.login}</from-action>
+                    <from-outcome>admin</from-outcome>
+                    <to-view-id>/admin/account/List.xhtml</to-view-id>
+                    <redirect />
+            </navigation-case>
+            <navigation-case>
+                    <from-action>#{loginController.login}</from-action>
+                    <from-outcome>normal</from-outcome>
+                    <to-view-id>/normal/computerReservation/List.xhtml</to-view-id>
+                    <redirect />
+            </navigation-case>
+            <navigation-case>
+                    <from-action>#{loginController.login}</from-action>
+                    <from-outcome>speaker</from-outcome>
+                    <to-view-id>/speaker/labReservation/List.xhtml</to-view-id>
+                    <redirect />
+            </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+            <from-view-id>/index.xhtml</from-view-id>
+            <navigation-case>
+                    <from-action>#{accountController.create}</from-action>
+                    <from-outcome>/success</from-outcome>
+                    <to-view-id>/login/Login.xhtml</to-view-id>
+                    <redirect />
+            </navigation-case>
+            <navigation-case>
+                    <from-action>#{accountController.create}</from-action>
+                    <from-outcome>/failed</from-outcome>
+                    <to-view-id>/index.xhtml</to-view-id>
+                    <redirect />
+            </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+            <navigation-case>
+                    <from-action>#{logoutController.logout}</from-action>
+                    <from-outcome>logout</from-outcome>
+                    <to-view-id>/index.xhtml</to-view-id>
+                    <redirect />
+            </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+            <navigation-case>
+                    <from-action>#{labReservationController.create}</from-action>
+                    <from-outcome>speaker/success</from-outcome>
+                    <to-view-id>/speaker/labReservation/List.xhtml</to-view-id>
+                    <redirect />
+            </navigation-case>
+            <navigation-case>
+                    <from-action>#{labReservationController.create}</from-action>
+                    <from-outcome>admin/success</from-outcome>
+                    <to-view-id>/admin/labReservation/List.xhtml</to-view-id>
+                    <redirect />
+            </navigation-case>
+                        <navigation-case>
+                    <from-action>#{computerReservationController.create}</from-action>
+                    <from-outcome>speaker/success</from-outcome>
+                    <to-view-id>/speaker/computerReservation/List.xhtml</to-view-id>
+                    <redirect />
+            </navigation-case>
+            <navigation-case>
+                    <from-action>#{computerReservationController.create}</from-action>
+                    <from-outcome>admin/success</from-outcome>
+                    <to-view-id>/admin/computerReservation/List.xhtml</to-view-id>
+                    <redirect />
+            </navigation-case>
+            <navigation-case>
+                    <from-action>#{computerReservationController.create}</from-action>
+                    <from-outcome>normal/success</from-outcome>
+                    <to-view-id>/normal/computerReservation/List.xhtml</to-view-id>
+                    <redirect />
+            </navigation-case>
+    </navigation-rule>
+</faces-config>

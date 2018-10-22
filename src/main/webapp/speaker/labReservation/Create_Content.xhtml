@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+        <p:panelGrid columns="2" rendered="#{labReservationController.selected != null}">
+            <p:outputLabel value="#{bundle.EditLabReservationLabel_lab}" for="lab" />
+            <p:selectOneMenu required="true" id="lab" value="#{labReservationController.selected.lab}" >
+                <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                <f:selectItems value="#{labController.items}"
+                               var="labItem"
+                               itemValue="#{labItem}"/>
+            </p:selectOneMenu>
+            <p:outputLabel value="#{bundle.EditLabReservationLabel_createDate}" for="createDate" />
+            <p:calendar readonly="true" id="createDate" pattern="#{bundle.DatePattern}" value="#{labReservationController.selected.createDate}" title="#{bundle.EditLabReservationTitle_createDate}" showOn="none" disabled="true"/>
+            <p:outputLabel value="#{bundle.CreateComputerReservationLabel_startDate}" for="startDate" />
+            <p:calendar required="true" id="startDate" pattern="#{bundle.DatePattern}" value="#{labReservationController.selected.startDate}" title="#{bundle.EditComputerReservationTitle_startDate}"  showOn="button"/>
+            <p:outputLabel value="#{bundle.CreateComputerReservationLabel_endDate}" for="endDate" />
+            <p:calendar required="true" id="endDate" pattern="#{bundle.DatePattern}" value="#{labReservationController.selected.endDate}" title="#{bundle.EditComputerReservationTitle_endDate}"  showOn="button"/>
+            <p:outputLabel value="#{bundle.EditLabReservationLabel_workstations}" for="workstations" />
+            <p:inputText required="true" id="workstations" value="#{labReservationController.selected.workstations}" title="#{bundle.EditLabReservationTitle_workstations}" />
+        </p:panelGrid>
+    </ui:composition>
+</html>

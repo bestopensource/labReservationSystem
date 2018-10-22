@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+        <p:panelGrid columns="2" rendered="#{accountController.selected != null}">
+            <p:outputLabel value="#{bundle.CreateAccountLabel_email}" for="email" />
+            <p:inputText required="true" id="email" value="#{accountController.selected.email}" title="#{bundle.CreateAccountTitle_email}" />
+            <p:outputLabel value="#{bundle.CreateAccountLabel_password}" for="password" />
+            <p:inputText required="true" id="password" value="#{accountController.selected.password}" title="#{bundle.CreateAccountTitle_password}" />
+            <p:outputLabel value="#{bundle.CreateAccountLabel_username}" for="username" />
+            <p:inputText required="true" id="username" value="#{accountController.selected.username}" title="#{bundle.CreateAccountTitle_username}" />
+            <p:outputLabel value="#{bundle.CreateAccountLabel_roleSystem}" for="roleSystem" />
+            <p:selectOneMenu required="true" id="roleSystem" value="#{accountController.selected.roleSystem}" >
+                <f:selectItems value="#{roleSystemController.items}"
+                               var="roleItem"
+                               itemValue="#{roleItem}"/>
+            </p:selectOneMenu>
+        </p:panelGrid>
+    </ui:composition>
+</html>

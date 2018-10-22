@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+        <p:panelGrid columns="2" rendered="#{computerReservationController.selected != null}">
+            <p:outputLabel value="#{bundle.CreateComputerReservationLabel_computer}" for="computer" />
+            <p:selectOneMenu required="true" id="computer" value="#{computerReservationController.selected.computer}" >
+                <f:selectItems value="#{computerController.items}"
+                               var="computerItem"
+                               itemValue="#{computerItem}"/>
+            </p:selectOneMenu>
+            <p:outputLabel value="#{bundle.CreateComputerReservationLabel_createDate}" for="createDate" />
+            <p:calendar readonly="true" id="createDate" pattern="#{bundle.DatePattern}" value="#{computerReservationController.selected.createDate}" title="#{bundle.EditComputerReservationTitle_createDate}" showOn="none" disabled="true"/>
+            <p:outputLabel value="#{bundle.CreateComputerReservationLabel_startDate}" for="startDate" />
+            <p:calendar required="true" id="startDate" pattern="#{bundle.DatePattern}" value="#{computerReservationController.selected.startDate}" title="#{bundle.EditComputerReservationTitle_startDate}"  showOn="button"/>
+            <p:outputLabel value="#{bundle.CreateComputerReservationLabel_endDate}" for="endDate" />
+            <p:calendar required="true" id="endDate" pattern="#{bundle.DatePattern}" value="#{computerReservationController.selected.endDate}" title="#{bundle.EditComputerReservationTitle_endDate}"  showOn="button"/>
+            <p:outputLabel value="#{bundle.CreateComputerReservationLabel_account}" for="account" />
+            <p:selectOneMenu required="true" id="account" value="#{computerReservationController.selected.account}" >
+                <f:selectItems value="#{accountController.items}"
+                               var="accountItem"
+                               itemValue="#{accountItem}"/>
+            </p:selectOneMenu>
+        </p:panelGrid>
+    </ui:composition>
+</html>
